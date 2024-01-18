@@ -1,38 +1,48 @@
 module github.com/romanyx/polluter
 
+go 1.21.0
+
 require (
-	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
-	github.com/DATA-DOG/go-txdb v0.1.0
-	github.com/Microsoft/go-winio v0.4.11 // indirect
-	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 // indirect
-	github.com/cenkalti/backoff v2.0.0+incompatible // indirect
-	github.com/containerd/continuity v0.0.0-20181027224239-bea7585dbfac // indirect
+	github.com/DATA-DOG/go-txdb v0.1.8
+	github.com/go-redis/redis v6.15.9+incompatible
+	github.com/go-sql-driver/mysql v1.7.1
+	github.com/lib/pq v1.10.9
+	github.com/ory/dockertest v3.0.9+incompatible
+	github.com/pkg/errors v0.9.1
+	github.com/romanyx/jwalk v1.0.0
+	github.com/stretchr/testify v1.8.4
+	gopkg.in/yaml.v2 v2.4.0
+)
+
+require (
+	github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1 // indirect
+	github.com/Microsoft/go-winio v0.6.1 // indirect
+	github.com/cenk/backoff v2.2.1+incompatible // indirect
+	github.com/containerd/containerd v1.6.26 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/docker/docker v24.0.7+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
-	github.com/docker/go-units v0.3.3 // indirect
-	github.com/fsnotify/fsnotify v1.4.7 // indirect
-	github.com/go-redis/redis v6.14.0+incompatible
-	github.com/go-sql-driver/mysql v1.4.0
-	github.com/golang/protobuf v1.2.0 // indirect
-	github.com/google/go-cmp v0.2.0 // indirect
-	github.com/gotestyourself/gotestyourself v2.2.0+incompatible // indirect
+	github.com/docker/go-units v0.5.0 // indirect
+	github.com/fsouza/go-dockerclient v1.10.1 // indirect
+	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
-	github.com/lib/pq v1.0.0
+	github.com/klauspost/compress v1.15.9 // indirect
+	github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329 // indirect
+	github.com/moby/patternmatcher v0.6.0 // indirect
+	github.com/moby/sys/sequential v0.5.0 // indirect
+	github.com/moby/term v0.0.0-20210619224110-3f7ff695adc6 // indirect
+	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/onsi/ginkgo v1.6.0 // indirect
 	github.com/onsi/gomega v1.4.1 // indirect
-	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
-	github.com/opencontainers/image-spec v1.0.1 // indirect
-	github.com/opencontainers/runc v0.1.1 // indirect
-	github.com/ory/dockertest v3.3.2+incompatible
-	github.com/pkg/errors v0.8.0
-	github.com/romanyx/jwalk v1.0.0
-	github.com/sirupsen/logrus v1.2.0 // indirect
-	github.com/stretchr/testify v1.2.2
-	golang.org/x/net v0.0.0-20180826012351-8a410e7b638d // indirect
-	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f // indirect
-	golang.org/x/text v0.3.0 // indirect
-	google.golang.org/appengine v1.1.0 // indirect
+	github.com/opencontainers/go-digest v1.0.0 // indirect
+	github.com/opencontainers/image-spec v1.1.0-rc2.0.20221005185240-3a7f492d3f1b // indirect
+	github.com/opencontainers/runc v1.1.5 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
+	golang.org/x/mod v0.8.0 // indirect
+	golang.org/x/sys v0.15.0 // indirect
+	golang.org/x/tools v0.6.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
-	gopkg.in/yaml.v2 v2.2.1
-	gotest.tools v2.2.0+incompatible // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
