@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 	"testing"
@@ -102,7 +102,7 @@ func newMySQL(pool *dockertest.Pool) (*mySQL, error) {
 	errChan := make(chan error)
 	done := make(chan struct{})
 
-	mysqlD.SetLogger(log.New(ioutil.Discard, "", 0)) // mute mysql logger.
+	mysqlD.SetLogger(log.New(io.Discard, "", 0)) // mute mysql logger.
 
 	var db *sql.DB
 
@@ -206,7 +206,7 @@ type pgDocker struct {
 
 const pgSchema = `
 CREATE TABLE IF NOT EXISTS users (
-	id integer NOT NULL, 
+	id integer NOT NULL,
 	name varchar(255) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS "all" (
