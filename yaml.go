@@ -112,6 +112,4 @@ func formatValue(typedYAMLObj interface{}) string {
 	default:
 		return "null"
 	}
-
-	return ""
 }

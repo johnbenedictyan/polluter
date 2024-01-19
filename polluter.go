@@ -92,13 +92,13 @@ func RedisEngine(cli *redis.Client) Option {
 	}
 }
 
-// JSONParser option enambles JSON
+// JSONParser option enables JSON
 // parsing engine for seeding.
 func JSONParser(p *Polluter) {
 	p.parser = jsonParser{}
 }
 
-// YAMLParser option enambles YAML
+// YAMLParser option enables YAML
 // parsing engine for seeding.
 func YAMLParser(p *Polluter) {
 	p.parser = yamlParser{}
@@ -108,10 +108,13 @@ func YAMLParser(p *Polluter) {
 // Polluter.
 // For example to seed MySQL database with
 // JSON input use:
-//		p := New(MySQLEngine(db))
+//
+//	p := New(MySQLEngine(db))
+//
 // To seed Postgres database with YAML input
 // use:
-// 		p := New(PostgresEngine(db), YAMLParser)
+//
+//	p := New(PostgresEngine(db), YAMLParser)
 func New(options ...Option) *Polluter {
 	p := Polluter{
 		parser:   yamlParser{},
