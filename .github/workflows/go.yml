@@ -27,10 +27,7 @@ jobs:
         go-version: '1.21.0'
 
     - name: Download Dependencies
-      run: go mod download
-
-    - name: Get
-      run: go get github.com/johnbenedictyan/polluter
+      run: go get -t github.com/johnbenedictyan/polluter
 
     - name: Test
       run: go test -v --race ./...
