@@ -8,8 +8,10 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/romanyx/jwalk"
-	yaml "gopkg.in/yaml.v2"
+	yaml "gopkg.in/yaml.v3"
 )
+
+type CustomMap = map[any]any
 
 type yamlParser struct{}
 
@@ -38,7 +40,7 @@ func (p yamlParser) parse(r io.Reader) (jwalk.ObjectWalker, error) {
 }
 
 func yamlToJSON(data []byte) ([]byte, error) {
-	mapSlice := yaml.MapSlice{}
+	mapSlice := CustomMap{}
 
 	err := yaml.Unmarshal(data, &mapSlice)
 	if err != nil {
@@ -51,14 +53,14 @@ func yamlToJSON(data []byte) ([]byte, error) {
 	return buf.Bytes(), nil
 }
 
-func handleMapSlice(mapSlice yaml.MapSlice, buf *bytes.Buffer) {
+func handleMapSlice(mapSlice CustomMap, buf *bytes.Buffer) {
 	buf.WriteString("{")
 	first := true
 	indent := ""
-	for _, item := range mapSlice {
-		buf.WriteString(indent + "\"" + item.Key.(string) + "\"" + ":")
-		switch v := item.Value.(type) {
-		case yaml.MapSlice:
+	for k, v := range mapSlice {
+		buf.WriteString(indent + "\"" + k.(string) + "\"" + ":")
+		switch v := v.(type) {
+		case CustomMap:
 			handleMapSlice(v, buf)
 		case []interface{}:
 			buf.WriteString("[")
@@ -66,7 +68,7 @@ func handleMapSlice(mapSlice yaml.MapSlice, buf *bytes.Buffer) {
 			indent := ""
 			for _, i := range v {
 				switch v := i.(type) {
-				case yaml.MapSlice:
+				case CustomMap:
 					buf.WriteString(indent)
 					handleMapSlice(v, buf)
 				default:
