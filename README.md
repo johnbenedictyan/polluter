@@ -1,6 +1,6 @@
-[![GoDoc](https://godoc.org/github.com/romanyx/polluter?status.svg)](https://godoc.org/github.com/romanyx/polluter)
-[![Go Report Card](https://goreportcard.com/badge/github.com/romanyx/polluter)](https://goreportcard.com/report/github.com/romanyx/polluter)
-[![Build Status](https://travis-ci.org/romanyx/polluter.svg?branch=master)](https://travis-ci.org/romanyx/polluter)
+[![GoDoc](https://godoc.org/github.com/johnbenedictyan/polluter?status.svg)](https://godoc.org/github.com/johnbenedictyan/polluter)
+[![Go Report Card](https://goreportcard.com/badge/github.com/johnbenedictyan/polluter)](https://goreportcard.com/report/github.com/johnbenedictyan/polluter)
+[![Build Status](https://travis-ci.org/johnbenedictyan/polluter.svg?branch=master)](https://travis-ci.org/johnbenedictyan/polluter)
 
 # polluter
 
@@ -11,7 +11,7 @@ Mainly this package was created for testing purposes, to give the ability to see
 ```go
 package main
 
-import "github.com/romanyx/polluter"
+import "github.com/johnbenedictyan/polluter"
 
 const input = `
 roles:
@@ -36,7 +36,7 @@ func TestX(t *testing.T) {
 
 ## Examples
 
-[See](https://github.com/romanyx/polluter/blob/master/polluter_test.go#L109) examples of usage with parallel testing.
+[See](https://github.com/johnbenedictyan/polluter/blob/master/polluter_test.go#L109) examples of usage with parallel testing.
 
 ## Testing
 

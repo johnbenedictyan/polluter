@@ -1,4 +1,4 @@
-module github.com/romanyx/polluter
+module github.com/johnbenedictyan/polluter
 
 go 1.21.0
 
