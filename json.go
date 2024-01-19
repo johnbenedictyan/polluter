@@ -2,7 +2,6 @@ package polluter
 
 import (
 	"io"
-	"io/ioutil"
 
 	"github.com/pkg/errors"
 	"github.com/romanyx/jwalk"
@@ -11,7 +10,7 @@ import (
 type jsonParser struct{}
 
 func (p jsonParser) parse(r io.Reader) (jwalk.ObjectWalker, error) {
-	data, err := ioutil.ReadAll(r)
+	data, err := io.ReadAll(r)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to read")
 	}

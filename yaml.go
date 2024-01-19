@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"strconv"
 
 	"github.com/pkg/errors"
@@ -15,7 +14,7 @@ import (
 type yamlParser struct{}
 
 func (p yamlParser) parse(r io.Reader) (jwalk.ObjectWalker, error) {
-	data, err := ioutil.ReadAll(r)
+	data, err := io.ReadAll(r)
 	if err != nil {
 		return nil, errors.Wrap(err, "read from input")
 	}
