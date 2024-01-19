@@ -11,7 +11,7 @@ import (
 	yaml "gopkg.in/yaml.v3"
 )
 
-type CustomMap = map[any]any
+type CustomMap = map[string]any
 
 type yamlParser struct{}
 
@@ -58,7 +58,7 @@ func handleMapSlice(mapSlice CustomMap, buf *bytes.Buffer) {
 	first := true
 	indent := ""
 	for k, v := range mapSlice {
-		buf.WriteString(indent + "\"" + k.(string) + "\"" + ":")
+		buf.WriteString(indent + "\"" + k + "\"" + ":")
 		switch v := v.(type) {
 		case CustomMap:
 			handleMapSlice(v, buf)
